@@ -1,4 +1,4 @@
-QBCore = nil
+local QBCore = exports['qb-core']:GetCoreObject()
 
 TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
@@ -13,7 +13,7 @@ AddEventHandler('qb-vehicleshop.requestInfo', function()
 end)
 
 QBCore.Functions.CreateCallback('qb-vehicleshop.isPlateTaken', function (source, cb, plate)
-    QBCore.Functions.ExecuteSql(true, "SELECT * FROM `player_vehicles` WHERE `plate` = '"..plate.."'", function(result)
+    exports.oxmysql.query(true, "SELECT * FROM `player_vehicles` WHERE `plate` = '"..plate.."'", function(result)
         cb(result[1] ~= nil)
     end)
 end)
@@ -32,7 +32,7 @@ AddEventHandler('qb-vehicleshop.CheckMoneyForVeh', function(veh, price, name, ve
             stateVehicle = 1
         end
 
-        QBCore.Functions.ExecuteSql(false, "INSERT INTO `player_vehicles` (`steam`, `citizenid`, `vehicle`, `hash`, `mods`, `plate`, `state`) VALUES ('"..xPlayer.PlayerData.steam.."', '"..xPlayer.PlayerData.citizenid.."', '"..veh.."', '"..GetHashKey(veh).."', '"..vehiclePropsjson.."', '"..vehicleProps.plate.."', '"..stateVehicle.."')")
+        exports.oxmysql.query(false, "INSERT INTO `player_vehicles` (`license`, `citizenid`, `vehicle`, `hash`, `mods`, `plate`, `state`) VALUES ('"..xPlayer.PlayerData.license.."', '"..xPlayer.PlayerData.citizenid.."', '"..veh.."', '"..GetHashKey(veh).."', '"..vehiclePropsjson.."', '"..vehicleProps.plate.."', '"..stateVehicle.."')")
         TriggerClientEvent("qb-vehicleshop.successfulbuy", source, name, vehicleProps.plate, price)
         TriggerClientEvent('qb-vehicleshop.receiveInfo', source, xPlayer.PlayerData.money['bank'])    
         TriggerClientEvent('qb-vehicleshop.spawnVehicle', source, veh, vehicleProps.plate)

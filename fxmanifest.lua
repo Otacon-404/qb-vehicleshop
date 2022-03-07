@@ -4,9 +4,10 @@ game 'gta5'
 description 'QB-VehicleShop'
 version '1.0.0'
 
-server_scripts {			
+server_scripts {	
+	'@oxmysql/lib/MySQL.lua',	
 	'config.lua',
-	'server/server.lua',
+	'server/server.lua'
 }
 
 client_scripts {		

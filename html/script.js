@@ -69,7 +69,7 @@ window.addEventListener('message', function(event) {
     if (event.data.type == "notify") {       
         var data = event.data;
 
-        $("#messagePopup").css("background-color","rgb(252, 18, 89)");      
+        $("#messagePopup").css("background-color","#00BF8F");      
 
         $("#messagePopup").fadeIn(500);      
         
@@ -126,13 +126,13 @@ window.addEventListener('message', function(event) {
                     </div>         
 
                     <div class="row" id="actionButton">
-                        <a class="buyButton" style=" color:#FC1259;" onclick="openModalMenu()"> Buy </a>
+                        <a class="buyButton" style=" color:#00BF8F;" onclick="openModalMenu()"> Buy </a>
                     </div>
                 `);
 
                 if (isEnableTestDrive) {
                     $('#actionButton').append(`
-                        <a class="tdButtton" onclick="testDrive()"> Test Drive </a>
+                        <a class="tdButtton" onclick="testDrive()"> Test </a>
                     `);
                 }
     }

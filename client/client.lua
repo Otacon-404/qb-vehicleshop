@@ -12,14 +12,7 @@ local provisoryObject = {}
 local rgbColorSelected = {255,255,255,}
 local rgbSecondaryColorSelected = {255,255,255,}
 
-QBCore = nil
-
-Citizen.CreateThread(function ()
-	while QBCore == nil do
-		TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-		Citizen.Wait(200)
-	end
-end)
+QBCore = exports['qb-core']:GetCoreObject()
 
 Citizen.CreateThread(function()
     while true do
@@ -120,11 +113,11 @@ function OpenVehicleShop()
     )
     SetNuiFocus(true, true)
     RequestCollisionAtCoord(x, y, z)
-    cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", 974.1, -2997.94, -39.00, 216.5, 0.00, 0.00, 60.00, false, 0)
-    PointCamAtCoord(cam, 979.1, -3003.00, -40.50)
+    cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", 227.3182, -984.6757, -96.7379, 323.8064, 0.00, 0.00, 60.00, false, 0)
+    PointCamAtCoord(cam, 231.6663, -979.5956, -99.6081)
     SetCamActive(cam, true)
     RenderScriptCams(true, true, 1, true, true)
-    SetFocusPosAndVel(974.1, -2997.94, -39.72, 0.0, 0.0, 0.0)
+    SetFocusPosAndVel(227.2824, -984.6154, -95.9182, 325.2424)
     DisplayHud(false)
     DisplayRadar(false)
 
@@ -148,7 +141,7 @@ function updateSelectedVehicle(model)
     end
   --  lastSelectedVehicleEntity = CreateVehicle(hash, 404.99, -949.60, -99.98, 50.117, 0, 1)
     
-  lastSelectedVehicleEntity = CreateVehicle(hash, 978.19, -3001.99, -40.62, 89.5, 0, 1)
+  lastSelectedVehicleEntity = CreateVehicle(hash, 231.6663, -979.5956, -99.6081, 90.6695, 0, 1)
 
 
     local vehicleData = {}
@@ -381,20 +374,20 @@ function CloseNui()
     provisoryObject = {}
 end
 
-function DrawText3Ds(x,y,z, text)
-    local onScreen,_x,_y=World3dToScreen2d(x,y,z)
-    local px,py,pz=table.unpack(GetGameplayCamCoords())
-    
+
+function DrawText3Ds(x, y, z, text)
     SetTextScale(0.35, 0.35)
-    SetTextFont(1)
+    SetTextFont(4)
     SetTextProportional(1)
     SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
-    SetTextCentre(1)
+    SetTextEntry('STRING')
+    SetTextCentre(true)
     AddTextComponentString(text)
-    DrawText(_x,_y)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
     local factor = (string.len(text)) / 370
-    DrawRect(_x,_y+0.0125, 0.015+ factor, 0.03, 41, 11, 41, 68)
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 function drawTxt(text,font,x,y,scale,r,g,b,a)

@@ -1,5 +1,6 @@
 # qb-vehicleshop
 Vehicle Shop for QB-Core Framework :car:
+Reskined & updated by ST4LTH
 
 ## Dependencies
 - [qb-core](https://github.com/qbcore-framework/qb-core)
@@ -7,8 +8,8 @@ Vehicle Shop for QB-Core Framework :car:
 - [qb-vehiclekeys](https://github.com/qbcore-framework/qb-vehiclekeys) - For the vehicle keys
 
 ## Screenshots
-![Vehicle shop](https://i.imgur.com/6WOs7Xu.png)
-![Purchase confirmation](https://imgur.com/k6L3vQE.png)
+![Vehicle shop](https://gyazo.com/34137cf0d02d9586ac88bebb4b6d1e28)
+![Purchase confirmation](https://gyazo.com/eb77b6e01b0ef94124059dad888f60a7)
 ![Test drive](https://imgur.com/omvRCbG.png)
 
 ## Features
