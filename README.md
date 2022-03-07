@@ -8,8 +8,8 @@ Reskined & updated by ST4LTH
 - [qb-vehiclekeys](https://github.com/qbcore-framework/qb-vehiclekeys) - For the vehicle keys
 
 ## Screenshots
-![Vehicle shop](https://imgur.com/a/U84etqp)
-![Purchase confirmation](https://imgur.com/a/4LgETKB)
+![Vehicle shop](https://i.imgur.com/0GC3VmY.jpeg)
+![Purchase confirmation](https://i.imgur.com/Je3UIQC.jpeg)
 ![Test drive](https://imgur.com/omvRCbG.png)
 
 ## Features
