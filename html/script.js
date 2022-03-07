@@ -126,7 +126,7 @@ window.addEventListener('message', function(event) {
                     </div>         
 
                     <div class="row" id="actionButton">
-                        <a class="buyButton" style=" color:#00BF8F;" onclick="openModalMenu()"> Buy </a>
+                        <a class="buyButton" onclick="openModalMenu()"> Buy </a>
                     </div>
                 `);
 
